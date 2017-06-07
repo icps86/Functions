@@ -7,8 +7,6 @@ require(ggplot2)
 # Onto the function!
   if (!is.numeric(x) || any(is.na(x) | x < 0))
     stop("'x' values must be positive numeric.")
-  if (is.null(levels(lev)))
-    stop("'lev' must be a factor")
   lev <- factor(x=as.character(lev), levels=as.character(lev), ordered = TRUE)
   x <- x/sum(x)
   ymax <- cumsum(x)
