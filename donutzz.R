@@ -2,6 +2,9 @@
 donutzz <- function (x, lev, xlim = c(0,4), width.max=3, width.min=2, border="white", border.size =1.5,
                      main = "have to put a title dude/dudette!", mar = 1)
 {
+# Load Required Packages
+require(ggplot2)
+# Onto the function!
   if (!is.numeric(x) || any(is.na(x) | x < 0))
     stop("'x' values must be positive numeric.")
   if (is.null(levels(lev)))
