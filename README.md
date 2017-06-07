@@ -27,7 +27,7 @@ donutzz <- function (x, lev, xlim = c(0,4), width.max=3, width.min=2, border="wh
 * x: the values for each category that will be represented in the donut. Has to be a positive numeric vector. 
 * lev: the name of the categories. The function will work with levels of a factor class, but if you input a character vector it will also work. Note that the order of the names will be correlative to the order on the legend .
  
-Here is an code example with a dataframe:
+Here is a code example to use the donutzz with a dataframe:
 ```
 #Creating the DF
 x <- data.frame(MGenre = c("Medieval Metal", "Doom Metal", "Symbolic Metal", "Metal Metal", "Mathematical metal"), Fans  = c(40, 90, 10, 20, 80), row.names = NULL)
