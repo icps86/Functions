@@ -2,7 +2,8 @@
 
 ## Donutzz
 
-To create a donut chart within R, please use my function by calling the following commands:
+To load the Donutzz function into your main environment directly from RStudio, run this code to create a simple function that loads other functions from git:
+
 ```
 source_github <- function( url ) {
   # load package
@@ -13,18 +14,24 @@ source_github <- function( url ) {
   eval(parse(text = script), envir=.GlobalEnv)
 } 
 
+#load the donutzz function using the RAW link
 source_github("https://raw.githubusercontent.com/icps86/Functions/master/donutzz.R")
 ```
 Now the function `donutzz` is available in your global environment for use! 
 
-Here is an example of how to use it:
+These are the arguments (and their defualts) for the function:
+
+donutzz <- function (x, lev, xlim = c(0,4), width.max=3, width.min=2, border="white", border.size =1.5,
+                     main = "have to put a title dude/dudette!", mar = 1)
+
+* x: the values for each category that will be represented in the donut. Has to be a positive numeric vector. 
+* lev: the name of the categories. The function will work with levels of a factor class, but if you input a character vector it will also work. Note that the order of the names will be correlative to the order on the legend .
+ 
+Here is an code example with a dataframe:
 ```
-# Create a vector of numeric values
-xval <- c(10, 20, 40, 80, 100)
-# Create a factor vector of labels corresponding to each numeric value
-xnames <- as.factor( c("H", "E", "L", "X", "O") )
+#Creating the DF
+x <- data.frame(MGenre = c("Medieval Metal", "Doom Metal", "Symbolic Metal", "Metal Metal", "Mathematical metal"), Fans  = c(40, 90, 10, 20, 80), row.names = NULL)
+
 # Create the donut chart
-first.donut.chart <- donutzz( x = xval, lev = xnames, main = "Place Title Here" )
-# Display the donut chart
-first.donut.chart
+donutzz(x = x$Fans, lev = x$MGenre, main = "Composition of Thematic Metal Fans in Iowa" )
 ```
