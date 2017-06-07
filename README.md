@@ -2,14 +2,16 @@
 
 ## Donutzz
 
-To create a donut chart within R, please use my function by calling the following commands:
+![](https://github.com/cenuno/MPA_Portfolio/raw/lab_01/IST719_Information-Visualization/example_donut.png)
+
+### To create a donut chart within R, please use my function by calling the following commands:
 ```
 source_github <- function( url ) {
   # load package
   require(RCurl)
   
   # read script lines from website and evaluate
-  script <- getURL(url, ssl.verifypeer = FALSE)
+  script <- getURL(u, ssl.verifypeer = FALSE)
   eval(parse(text = script), envir=.GlobalEnv)
 } 
 
