@@ -17,7 +17,7 @@ source_github <- function( url ) {
 #load the donutzz function using the RAW link
 source_github("https://raw.githubusercontent.com/icps86/Functions/master/donutzz.R")
 ```
-Now the function `donutzz` is available in your global environment for use! 
+Now `donutzz` is available in your global environment for use! 
 
 These are the arguments (and their defualts) for the function:
 
