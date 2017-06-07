@@ -9,7 +9,7 @@ source_github <- function( url ) {
   require(RCurl)
   
   # read script lines from website and evaluate
-  script <- getURL(u, ssl.verifypeer = FALSE)
+  script <- getURL(url, ssl.verifypeer = FALSE)
   eval(parse(text = script), envir=.GlobalEnv)
 } 
 
