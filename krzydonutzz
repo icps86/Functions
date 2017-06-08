@@ -1,5 +1,5 @@
 krzydonutzz <- function (x, values, labels, multiple = NULL, width.max=3, width.min=2, border.col="white", border.cex =1.5,
-                         main = "have to put a title dude/dudette!", mar = 1, percent.cex = 4, columns = 2, sbgfill = "grey80", sbgcol = "grey20")
+                         main = "have to put a title dude/dudette!", mar = 1, percent.cex = 4, columns = 2, sbgfill = "grey95", sbgcol = "grey60")
 {
   # Load Required Packages
   require(ggplot2)
