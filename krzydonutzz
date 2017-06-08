@@ -1,5 +1,5 @@
 krzydonutzz <- function (x, values, labels, multiple = NULL, width.max=3, width.min=2, border.col="white", border.cex =1.5,
-          main = "have to put a title dude/dudette!", mar = 1, percent.cex = 4)
+                         main = "have to put a title dude/dudette!", mar = 1, percent.cex = 4, columns = 2)
 {
   # Load Required Packages
   require(ggplot2)
@@ -10,20 +10,23 @@ krzydonutzz <- function (x, values, labels, multiple = NULL, width.max=3, width.
   colnames(x)[colnames(x) == labels] <- "labels"
   colnames(x)[colnames(x) == values] <- "values"
   
-  # Warnings
-  if (!is.numeric(x$values) || any(is.na(x$values) | x < 0))
-    stop("'Values' must be a numeric vector with only positive numbers.")
+  #Warnings
+  if (!is.numeric(x$values) || any(is.na(x$values) | x$values < 0))
+    stop("'Values' variable cannot handle NA's and must be a numeric vector with only positive numbers.")
   
+  if (length(unique(x$multiple)) > 8)
+    stop("You are trying to plot too many donutzz! (8 max)")
+
   #making factors for labels
   x$labels <- factor(x=as.character(x$labels), ordered = F)
-  
+
   #loop to format the dataframe and making the variables needed
   i <- 1
   df <- data.frame()
   x2 <- NULL
   
-  while(i  <= length(unique(x$multiple))) 
-    {
+  while (i  <= length(unique(x$multiple))) 
+  {
     x2 <- x$multiple == sort(unique(x$multiple))[i]
     x2 <- x[x2,]
     x2 <- x2[order(-x2$values),] 
@@ -36,7 +39,7 @@ krzydonutzz <- function (x, values, labels, multiple = NULL, width.max=3, width.
   }
   
   x <- df
-
+  
   pie <- ggplot(data=x,
                 aes(fill=labels,
                     xmax=width.max, xmin=width.min,
@@ -58,14 +61,12 @@ krzydonutzz <- function (x, values, labels, multiple = NULL, width.max=3, width.
           axis.ticks=element_blank(),
           axis.title = element_blank(),
           panel.border = element_blank(),
+          strip.background = element_rect(fill="#B4EBFF", color = "grey80"),
           plot.margin = margin(0,0,0,0, "cm"),
           legend.margin = margin(0,0,0,0, "cm"),
           legend.title = element_blank(),
           legend.position = "right",
           legend.text = element_text(colour = "grey40", size = 9)) +
-    facet_wrap(~multiple, ncol = 2)
+    facet_wrap(~multiple, ncol = columns)
   return(pie)
 }
-
-
-  
