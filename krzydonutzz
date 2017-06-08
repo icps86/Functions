@@ -1,5 +1,5 @@
 krzydonutzz <- function (x, values, labels, multiple = NULL, width.max=3, width.min=2, border.col="white", border.cex =1.5,
-                         main = "have to put a title dude/dudette!", mar = 1, percent.cex = 4, columns = 2)
+                         main = "have to put a title dude/dudette!", mar = 1, percent.cex = 4, columns = 2, sbgfill = "grey80", sbgcol = "grey20")
 {
   # Load Required Packages
   require(ggplot2)
@@ -61,7 +61,7 @@ krzydonutzz <- function (x, values, labels, multiple = NULL, width.max=3, width.
           axis.ticks=element_blank(),
           axis.title = element_blank(),
           panel.border = element_blank(),
-          strip.background = element_rect(fill="#B4EBFF", color = "grey80"),
+          strip.background = element_rect(fill= sbgfill, color = sbgcol), 
           plot.margin = margin(0,0,0,0, "cm"),
           legend.margin = margin(0,0,0,0, "cm"),
           legend.title = element_blank(),
