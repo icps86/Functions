@@ -19,7 +19,7 @@ krzymatch <- function(x, county= "Albany", comparators= 2)
     mat <- matchit(x$Treat ~  Pop + MHincome + pov.rate, data = dat, discard = dis)
     tmp <- as.numeric(mat$match.matrix)
     dis[tmp] <- TRUE
-    lis[i] <- tmp
+    lis[i] <- x$county.name[tmp]
     }
   return(lis)
 }
