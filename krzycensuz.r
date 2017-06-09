@@ -13,8 +13,7 @@ krzycensuz <- function (x)
     theme(legend.position = "bottom",
           axis.title = element_blank(),
           panel.border = element_blank(),
-          legend.title = element_blank()) +
-    ggtitle(label= "County Demographics Comparison (normalized values)" ) 
+          legend.title = element_blank())
   return(bars)
   
 }
