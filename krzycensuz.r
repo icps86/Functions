@@ -52,7 +52,7 @@ krzycensuz <- function (x)
             hjust = .5,
             vjust = .5,
             colour = "grey20") +
-  labs(caption = "* Poverty Rate is a percentage; Median Income is by Household") +
+  labs(caption = "Source: ACS 2015 Census data. *Poverty Rate is a percentage; Median Income is by Household") +
   theme(legend.position = "none",
           axis.title = element_blank(),
           axis.text=element_blank(), 
