@@ -3,7 +3,7 @@ krzycensuz <- function (x)
   # Load Required Packages
   require(ggplot2)
   require(gridExtra)
-  options(scipen = 999)
+  options(scipen = 999, digits = 0)
 
   #making pot
   bar.pop <- ggplot(x, aes(fill=county.name)) +
@@ -40,7 +40,7 @@ krzycensuz <- function (x)
             hjust = .5,
             vjust = .5,
             colour = "grey20") +
-  labs(caption = "(* Poverty Rate is a percentage /n * Median Income is by Household") +
+  labs(caption = "* Poverty Rate is a percentage; Median Income is by Household") +
   theme(legend.position = "none",
           axis.title = element_blank(),
           axis.text=element_blank(), 
