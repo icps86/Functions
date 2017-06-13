@@ -16,7 +16,10 @@ krzycensuz <- function (x)
     theme(legend.position = "none",
           axis.title = element_blank(),
           panel.border = element_blank(),
-          legend.title = element_blank())
+          legend.title = element_blank(),
+          panel.background = element_rect(colour = 'gray80'),
+          panel.grid.minor = element_blank(), 
+          panel.grid.major =element_blank()))
   
   bar.inc <- ggplot(x, aes(fill=county.name)) +
     geom_vline(xintercept=55276, color = "grey80", size=4, linetype = "solid") +
@@ -29,7 +32,10 @@ krzycensuz <- function (x)
     theme(legend.position = "none",
           axis.title = element_blank(),
           panel.border = element_blank(),
-          legend.title = element_blank())
+          legend.title = element_blank(),
+          panel.background = element_rect(colour = 'gray80'),
+          panel.grid.minor = element_blank(), 
+          panel.grid.major =element_blank()))
   
   bar.pov <- ggplot(x, aes(fill=county.name)) +
     geom_vline(xintercept=13.8, color = "grey80", size=4, linetype = "solid") +
@@ -41,7 +47,10 @@ krzycensuz <- function (x)
     theme(legend.position = "none",
           axis.title = element_blank(),
           panel.border = element_blank(),
-          legend.title = element_blank())
+          legend.title = element_blank(),
+          panel.background = element_rect(colour = 'gray80'),
+          panel.grid.minor = element_blank(), 
+          panel.grid.major =element_blank()))
   
   leg <- ggplot(x, aes(fill=county.name)) +
   geom_point(aes(x=2:(length(levels(x$county.name))+1), y=""), stat="identity", shape = 23, size = 8) +
