@@ -1,6 +1,4 @@
 krzycensuz <- function (x)
-
-krzycensuz <- function (x)
 {
   # Load Required Packages
   require(ggplot2)
