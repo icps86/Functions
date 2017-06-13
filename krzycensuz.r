@@ -32,15 +32,16 @@ krzycensuz <- function (x)
           legend.title = element_blank())
   
   leg <- ggplot(x, aes(fill=county.name)) +
-    geom_point(aes(x=2:(length(levels(x$county.name))+1), y=""), stat="identity", shape = 23, size = 8) +
-    theme_bw() +
-    coord_cartesian(xlim = 1:(length(levels(x$county.name))+2)) +
-    geom_text(aes(x=2:(length(levels(x$county.name))+1), y=.8, label = paste0(levels(x$county.name))),
-          size= 4,
-          hjust = .5,
-          vjust = .5,
-          colour = "grey20") +
-    theme(legend.position = "none",
+  geom_point(aes(x=2:(length(levels(x$county.name))+1), y=""), stat="identity", shape = 23, size = 8) +
+  theme_bw() +
+  coord_cartesian(xlim = 1:(length(levels(x$county.name))+2)) +
+  geom_text(aes(x=2:(length(levels(x$county.name))+1), y=.8, label = paste0(levels(x$county.name))),
+            size= 4,
+            hjust = .5,
+            vjust = .5,
+            colour = "grey20") +
+  labs(caption = "(* Poverty Rate is a percentage /n * Median Income is by Household") +
+  theme(legend.position = "none",
           axis.title = element_blank(),
           axis.text=element_blank(), 
           axis.ticks=element_blank(),
