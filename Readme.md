@@ -1,5 +1,4 @@
-
-#Instructions to install costume functions into your environment:
+Instructions to install costume functions into your environment:
 
 ```{r}
 # Import data from github function
