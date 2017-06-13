@@ -3,7 +3,7 @@ krzycensuz <- function (x)
   # Load Required Packages
   require(ggplot2)
   require(gridExtra)
-  options(scipen = 999, digits = 1)
+  options(scipen = 999)
 
   #making pot
   bar.pop <- ggplot(x, aes(fill=county.name)) +
