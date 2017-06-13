@@ -35,7 +35,7 @@ krzycensuz <- function (x)
   geom_point(aes(x=2:(length(levels(x$county.name))+1), y=""), stat="identity", shape = 23, size = 8) +
   theme_bw() +
   coord_cartesian(xlim = 1:(length(levels(x$county.name))+2)) +
-  geom_text(aes(x=2:(length(levels(x$county.name))+1), y=.8, label = paste0(levels(x$county.name))),
+  geom_text(aes(x=2:(length(levels(x$county.name))+1), y=.7, label = paste0(levels(x$county.name))),
             size= 4,
             hjust = .5,
             vjust = .5,
