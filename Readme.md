@@ -1,4 +1,7 @@
 
+##Instructions to install costume functions into your environment:
+
+```{r}
 # Import data from github function
 source_github <- function( url ) {
   # load package
@@ -11,3 +14,4 @@ source_github <- function( url ) {
 
 
 source_github( "RAW URL TO FUNCTION .R FILE" )
+```
