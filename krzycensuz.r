@@ -12,28 +12,27 @@ krzycensuz <- function (x)
     geom_vline(xintercept=317309, color = "grey80", size=4, linetype = "solid") +
     geom_text(aes(x=317309, y="Population        ", label= "NY Average"), size = 3, colour = "grey40", angle = 90) +
     geom_point(aes(x=x$Pop, y="Population        "), stat="identity", shape = 23, size = 8) +
-    #theme_bw() +
+    theme_bw() +
     xlim(4700,max(x$Pop)+1000) + 
     theme(legend.position = "none",
           axis.title = element_blank(),
           panel.border = element_blank(),
           legend.title = element_blank(),
-          panel.background = element_rect(colour = 'gray80'),
           panel.grid.minor = element_blank(), 
-          panel.grid.major =element_blank())
+          panel.grid.major =element_blank(),
+          panel.grid.major.x = element_line())
   
   #second plot
   bar.inc <- ggplot(x, aes(fill=county.name)) +
     geom_vline(xintercept=55276, color = "grey80", size=4, linetype = "solid") +
     geom_text(aes(x=55276, y="Median Income", label= "NY Average"), size = 3, colour = "grey40", angle = 90) +
     geom_point(aes(x=x$MHincome, y="Median Income"), stat="identity", shape = 23, size = 8) +
-    #theme_bw() +
+    theme_bw() +
     xlim(34200,max(x$MHincome)+800) +
     theme(legend.position = "none",
           axis.title = element_blank(),
           panel.border = element_blank(),
           legend.title = element_blank(),
-          panel.background = element_rect(colour = 'gray80'),
           panel.grid.minor = element_blank(), 
           panel.grid.major =element_blank())
   
@@ -42,13 +41,12 @@ krzycensuz <- function (x)
     geom_vline(xintercept=13.8, color = "grey80", size=4, linetype = "solid") +
     geom_text(aes(x=13.8, y="Poverty Rate     ", label= "NY Average"), size = 3, colour = "grey40", angle = 90) +
     geom_point(aes(x=x$pov.rate, y="Poverty Rate     "), stat="identity", shape = 23, size = 8) +
-    #theme_bw() +
+    theme_bw() +
     xlim(5,max(x$pov.rate)+1) +
     theme(legend.position = "none",
           axis.title = element_blank(),
           panel.border = element_blank(),
           legend.title = element_blank(),
-          panel.background = element_rect(colour = 'gray80'),
           panel.grid.minor = element_blank(), 
           panel.grid.major =element_blank())
   
