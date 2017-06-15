@@ -1,5 +1,5 @@
 
-donutzz <- function (x, lev, xlim = c(0,4), width.max=3, width.min=2, border="white", border.size =1.5,
+donutz <- function (x, lev, xlim = c(0,4), width.max=3, width.min=2, border="white", border.size =1.5,
                      main = "have to put a title dude/dudette!", mar = 1)
 {
 # Load Required Packages
