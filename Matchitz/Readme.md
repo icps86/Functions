@@ -1,3 +1,5 @@
+This is a propensity score function that builds upon the MatchIt package developed by Gary King at Harvard University (https://gking.harvard.edu/matchit)
+
 #################LOADING THE FUNCTION##########################
 
 source_github <- function( url ) {
