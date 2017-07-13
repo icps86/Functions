@@ -1,4 +1,4 @@
-Instructions to install costume functions into your environment:
+These functions can be sourced directly from Github into your environment using the following code:
 
 ```{r}
 #First, create a simple function that can import other functions from Github
